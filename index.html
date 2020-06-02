@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Info-Standart</title>
+
+</head>
+
+<body>
+    <header class="header">
+        <h1>Анализ осадков в г. Рязань</h1>
+    </header>
+    <main class="content">
+        <section class="content_controls">
+            <form action="#" class="form" id="form">
+                <label for="date" class="label">Введите дату</label>
+                <input type="date" id="date" class="input_field" required>
+                <label for="num_precipitation" class="label">Введите количество осадков, мм</label>
+                <input type="number" class="input_field" id="num_precipitation" required>
+                <button type="submit" id="btn" class="btn">Добавить запись</button>
+            </form>
+            <div class="error_message">
+                <span class="error_message_text"></span>
+            </div>
+            <table id="table">
+                <thead>
+                    <th>Год</th>
+                    <th>Месяц</th>
+                    <th>Количество осадков, мм</th>
+                    <th>Операции</th>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                        <td colspan="4">Данных нет. Введите данные</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <h5 class="empty_title_charts">Данных для диаграмм нет</h5>
+        <section class="content_charts">
+            <div>
+                <p style="margin: 5px 0;">Количество осадков по годам, мм</p>
+                <canvas id="chart_year" width="200" height="200"></canvas>
+                <div id="procent_years"></div>
+            </div>
+            <div>
+                <p style="margin: 5px 0;">Количество осадков по месяцам, мм</p>
+                <canvas id="chart_month" width="200" height="200"></canvas>
+                <div id="procent_month"></div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/utils.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/renders/render-table.js"></script>
+    <script src="./js/renders/render-error-message.js"></script>
+    <script src="./js/renders/render-charts.js"></script>
+    <script src="./js/renders/render-all.js"></script>
+</body>
+
+</html>
